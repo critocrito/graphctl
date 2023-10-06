@@ -8,6 +8,7 @@ from .graph import (
     density,
 )
 from .host import write_to_file
+from .plot import graph_render
 
 
 GRAPH_TYPES = ["directed", "undirected"]
@@ -19,7 +20,13 @@ def cli(ctx):
     pass
 
 
-@cli.command("topology")
+@cli.group()
+@click.pass_context
+def topology(ctx):
+    pass
+
+
+@topology.command("basic")
 @click.option(
     "-g",
     "--graph",
@@ -28,7 +35,7 @@ def cli(ctx):
 )
 @click.argument("input", type=click.Path(exists=True, readable=True))
 @click.argument("output", type=click.Path(writable=True), default="out.csv")
-def graph_topology(graph, input, output):
+def topology_basic(graph, input, output):
     if graph == "undirected":
         G = from_csv(input)
     elif graph == "directed":
@@ -42,3 +49,22 @@ def graph_topology(graph, input, output):
     data.append({"measure": "Graph Density", "value": density(G)})
 
     write_to_file(output, data)
+
+
+@topology.command("graph")
+@click.option(
+    "-g",
+    "--graph",
+    type=click.Choice(GRAPH_TYPES),
+    default="undirected",
+)
+@click.option("--iterations", type=int, default=25)
+@click.argument("input", type=click.Path(exists=True, readable=True))
+@click.argument("output", type=click.Path(writable=True), default="graph.png")
+def topology_graph(graph, input, output, iterations):
+    if graph == "undirected":
+        G = from_csv(input)
+    elif graph == "directed":
+        G = directed_from_csv(input)
+
+    graph_render(G, iterations)
