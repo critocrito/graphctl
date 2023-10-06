@@ -40,3 +40,5 @@ pip-wheel-metadata
 .idea
 *.log
 tmp/
+
+out.csv
