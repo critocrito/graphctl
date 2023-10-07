@@ -73,17 +73,17 @@ def degree_out_centrality(G: nx.DiGraph) -> dict:
 
 def betweenness_centrality(G: nx.Graph or nx.DiGraph) -> dict:
     """Calculate the betweenness centrality of every node in a graph."""
-    return nx.betweenness_centrality
+    return nx.betweenness_centrality(G)
 
 
 def closeness_centrality(G: nx.Graph or nx.DiGraph) -> dict:
     """Calculate the closeness centrality of every node in a graph."""
-    return nx.closeness_centrality
+    return nx.closeness_centrality(G)
 
 
 def eigenvector_centrality(G: nx.Graph or nx.DiGraph) -> dict:
     """Calculate the eigenvector centrality of every node in a graph."""
-    return nx.eigenvector_centrality
+    return nx.eigenvector_centrality(G)
 
 
 def k_clique_communities(G: nx.Graph or nx.DiGraph, k: int) -> list:
