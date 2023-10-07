@@ -216,6 +216,6 @@ Project Link: [https://github.com/critocrito/graphctl](https://github.com/critoc
 [stars-url]: https://github.com/critocrito/graphctl/stargazers
 [issues-shield]: https://img.shields.io/github/issues/critocrito/graphctl.svg?style=for-the-badge
 [issues-url]: https://github.com/critocrito/graphctl/issues
-[license-shield]: https://img.shields.io/badge/License-GPLv3-blue.svg
+[license-shield]: https://img.shields.io/github/license/critocrito/graphctl.svg?style=for-the-badge
 [license-url]: https://github.com/critocrito/graphctl/blob/main/LICENSE.txt
 [product-screenshot]: images/screenshot.png
