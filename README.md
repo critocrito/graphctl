@@ -73,11 +73,11 @@ curl -sSL https://install.python-poetry.org | python3 -
    ```sh
    git clone https://github.com/critocrito/graphctl.git
    ```
-3. Install the python dependencies
+2. Install the python dependencies
    ```sh
    poetry install
    ```
-4. Make sure the command runs
+3. Make sure the command runs
    ```sh
    poetry run graphctl --help
    ```
