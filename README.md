@@ -106,6 +106,13 @@ poetry run graphctl -g directed <computation>
 
 Here is a list of all possible outputs that can be generated from the above network.
 
+### All
+
+Compute all insights about a network in one go. This includes most of the below computations.
+
+``` sh
+poetry run graphctl all network.csv out_dir
+```
 
 ### Topology
 
@@ -166,7 +173,71 @@ Here is a list of all possible outputs that can be generated from the above netw
   ```sh
   poetry run graphctl community louvain network.csv louvain-communities.csv
   ```
+
+* Label Propagation
+
+  ```sh
+  poetry run graphctl community label-propagation network.csv label-propagation-communities.csv
+  ```
+
+### Plot
+
+* Graph
+
+  Render the whole network graph.
   
+  ```sh
+  poetry run graphctl plot graph --iterations 15 network.csv graph.png
+  ```
+
+* Bridges
+
+  Render the graph and mark the bridges in the graph.
+  
+  ```sh
+  poetry run graphctl plot bridges network.csv bridges.png
+  ```
+
+* Degree Centrality Distribution
+
+  Plot the distribution of degree centrality as a bar chart.
+  
+  ```sh
+  poetry run graphctl plot degree-centrality-distribution network.csv degree-centrality.png
+  ```
+
+* Betweenness Centrality Distribution
+
+  Plot the distribution of betweenness centrality as a bar chart.
+  
+  ```sh
+  poetry run graphctl plot betweenness-centrality-distribution network.csv betweenness-centrality.png
+  ```
+
+* Eigenvector Centrality Distribution
+
+  Plot the distribution of eigenvector centrality as a bar chart.
+  
+  ```sh
+  poetry run graphctl plot eigenvector-centrality-distribution network.csv eigenvector-centrality.png
+  ```
+
+* Closeness Centrality Distribution
+
+  Plot the distribution of the closeness centrality as a bar chart.
+  
+  ```sh
+  poetry run graphctl plot closeness-centrality-distribution network.csv closeness-centrality.png
+  ```
+
+* Label Propagation Community
+
+  Plot the graph with the label propagation computed communities.
+  
+  ```sh
+  poetry run graphctl plot label-propagation-community network.csv label-propagation.png
+  ```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
